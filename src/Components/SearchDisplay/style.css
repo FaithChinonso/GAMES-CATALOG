@@ -1,0 +1,10 @@
+.search {
+  width: 50rem;
+  max-width: 95%;
+  padding: 1rem;
+  margin: 2rem auto;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  background-color: transparent;
+}

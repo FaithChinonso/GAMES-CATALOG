@@ -1,25 +1,56 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import SearchBar from "./Components/SearchBar";
+import SearchDisplay from "./Components/SearchDisplay";
+import styled from "styled-components";
+import "./App.css";
 
-function App() {
+const BoxContainer = styled.div`
+  width: 100%;
+  height: 100%;
+  background-color: #646363;
+  display: flex;
+  flex-direction: column;
+  padding: 3rem;
+`;
+const DUMMY_RESULTS = [
+  {
+    id: "el",
+    title: "SODUKO",
+    description: "A word game",
+    src: "img/soduko,jpeg",
+  },
+  {
+    id: "el",
+    title: "SODUKO",
+    description: "A word game",
+    src: "img/soduko,jpeg",
+  },
+  {
+    id: "el",
+    title: "SODUKO",
+    description: "A word game",
+    src: "img/soduko,jpeg",
+  },
+  {
+    id: "el",
+    title: "SODUKO",
+    description: "A word game",
+    src: "img/soduko,jpeg",
+  },
+  {
+    id: "el",
+    title: "SODUKO",
+    description: "A word game",
+    src: "img/soduko,jpeg",
+  },
+];
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BoxContainer>
+      <SearchDisplay item={DUMMY_RESULTS} />
+    </BoxContainer>
   );
-}
+};
 
 export default App;
