@@ -1,5 +1,4 @@
 import React from "react";
-import SearchFilter from "./Components/SearchFilter";
 import SearchDisplay from "./Components/SearchDisplay";
 import styled from "styled-components";
 import "./App.css";
@@ -14,41 +13,50 @@ const BoxContainer = styled.div`
 `;
 const DUMMY_RESULTS = [
   {
-    id: "el",
+    id: "ab",
     title: "SODUKO",
     description: "A word game",
     src: "img/soduko,jpeg",
+    group: "Academic",
+    level: "Key Stage 2",
   },
   {
-    id: "el",
+    id: "cd",
     title: "SODUKO",
     description: "A word game",
     src: "img/soduko,jpeg",
+    group: "Academic",
+    level: "Key Stage 1",
   },
   {
-    id: "el",
+    id: "ef",
     title: "SODUKO",
     description: "A word game",
     src: "img/soduko,jpeg",
+    group: "Academic",
+    level: "Key Stage 2",
   },
   {
-    id: "el",
+    id: "gh",
     title: "SODUKO",
     description: "A word game",
     src: "img/soduko,jpeg",
+    group: "Financial Literacy",
+    level: "Key Stage 1",
   },
   {
-    id: "el",
+    id: "ij",
     title: "SODUKO",
     description: "A word game",
     src: "img/soduko,jpeg",
+    group: "Financial Literacy",
+    level: "Key Stage 2",
   },
 ];
 
 const App = () => {
   return (
     <BoxContainer>
-      <SearchFilter />
       <SearchDisplay items={DUMMY_RESULTS} />
     </BoxContainer>
   );
