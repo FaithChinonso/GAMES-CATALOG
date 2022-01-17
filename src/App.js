@@ -1,5 +1,5 @@
 import React from "react";
-import SearchBar from "./Components/SearchBar";
+import SearchFilter from "./Components/SearchFilter";
 import SearchDisplay from "./Components/SearchDisplay";
 import styled from "styled-components";
 import "./App.css";
@@ -7,7 +7,7 @@ import "./App.css";
 const BoxContainer = styled.div`
   width: 100%;
   height: 100%;
-  background-color: #646363;
+  background-color: #d7d7d7;
   display: flex;
   flex-direction: column;
   padding: 3rem;
@@ -48,7 +48,8 @@ const DUMMY_RESULTS = [
 const App = () => {
   return (
     <BoxContainer>
-      <SearchDisplay item={DUMMY_RESULTS} />
+      <SearchFilter />
+      <SearchDisplay items={DUMMY_RESULTS} />
     </BoxContainer>
   );
 };

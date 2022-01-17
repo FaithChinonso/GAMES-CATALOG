@@ -1,0 +1,27 @@
+.search-filter {
+  color: white;
+  padding: 0 1rem;
+  display: flex;
+}
+
+.search-filter__control {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1rem 0;
+}
+
+.search-filter__control label {
+  font-weight: bold;
+  color: #325c32;
+  margin-bottom: 0.5rem;
+}
+
+.search-filter__control select {
+  font: inherit;
+  padding: 0.5rem 3rem;
+  font-weight: bold;
+  border-radius: 6px;
+}
