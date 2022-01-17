@@ -12,19 +12,15 @@ const SearchFilter = (props) => {
       <div className="search-filter__control">
         <label>Filter By Group</label>
         <select value={props.groupSelected} onChange={groupDropDownHandler}>
-          <option value="2024">2024</option>
-          <option value="2023">2023</option>
-          <option value="2022">2022</option>
-          <option value="2021">2021</option>
+          <option value="academic">Academic</option>
+          <option value="financial">Financial Literacy</option>
         </select>
       </div>
       <div className="search-filter__control">
         <label>Filter By Level</label>
         <select value={props.levelSelected} onChange={levelDropDownHandler}>
-          <option value="2024">2024</option>
-          <option value="2023">2023</option>
-          <option value="2022">2022</option>
-          <option value="2021">2021</option>
+          <option value="stage1">Key Stage 1</option>
+          <option value="stage2">Key Stage 2</option>
         </select>
       </div>
     </div>
