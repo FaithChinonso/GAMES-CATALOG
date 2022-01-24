@@ -2,10 +2,18 @@
   width: 50rem;
   max-width: 95%;
   padding: 1rem;
-  margin: 2rem auto;
+  margin: 0 auto;
+  gap: 3rem;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  align-items: center;
+  background-color: rgb(240, 238, 238);
+}
+.search-contents {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
-  background-color: #fff;
+  justify-content: space-around;
 }

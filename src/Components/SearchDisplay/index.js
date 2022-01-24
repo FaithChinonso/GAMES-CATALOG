@@ -3,79 +3,69 @@ import SearchItem from "../SearchItem";
 import SearchFilter from "../SearchFilter";
 import "./style.css";
 import Card from "../Card";
-import axios from "axios";
+import SearchBar from "../SearchBar";
 
 const SearchDisplay = (props) => {
-  // const [items, setItems] = useState([]);
-  // const [isLoading, setIsLoading] = useState(true);
-  const [filteredGroup, setFilteredGroup] = useState("");
+  const [filteredGroup, setFilteredGroup] = useState([]);
+  const [filteredLevel, setFilteredLevel] = useState([]);
+  const [filteredSearchItems, setFilteredSearchItems] = useState([]);
 
-  const groupFilterChangeHandler = (selectedGroup) => {
-    setFilteredGroup(selectedGroup);
+  const groupFilterChangeHandler = (selected) => {
+    setFilteredGroup(selected);
   };
-  // const levelFilterChangeHandler = (selected) => {
-  //   setFilteredLevel(selected);
-  // };
-  const filteredItems = props.items.filter((item) => {
-    return item.group === filteredGroup;
-  });
-  console.log(filteredItems);
 
-  // useEffect(() => {
-  //   fetch(
-  //     "https://partners.9ijakids.com/index.php?partnerId=555776&accessToken=l0lawtvv-94bv-oi4d-u808-5ubz&action=catalogfilter"
-  //   )
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       console.log(data);
-  //     });
-  // }, []);
-  //   fetch("/https://swapi.dev/api/films/")
-  //     .then((res) => res.json())
-  //     .then((response) => {
-  //       console.log(response);
-  //       // items = response.data;
-  //       // setItems(items);
-  //       // setIsLoading(false);
-  //     })
-  //     .catch((error) => console.log(error));
-  // }, []);
-  const items = props.items;
+  const levelFilterChangeHandler = (selected) => {
+    setFilteredLevel(selected);
+  };
+  const SubmitSearchChange = (input) => {
+    const filteredSearch = props.items.filter((item) => {
+      if (item.GameTitle.toLowerCase().includes(input.toLowerCase())) {
+        return item;
+      }
+    });
+
+    setFilteredSearchItems(filteredSearch);
+    console.log(filteredSearchItems);
+  };
+
+  const filteredItem = props.items.filter((item) => {
+    if (filteredGroup.length > 0) {
+      return item.Group === filteredGroup;
+    } else if (filteredLevel.length > 0) {
+      return item.Level === filteredLevel;
+    }
+  });
+  let filteredArray = props.items;
+
+  if (filteredSearchItems.length > 0) {
+    filteredArray = filteredSearchItems;
+  } else if (filteredItem.length > 0) {
+    filteredArray = filteredItem;
+  }
 
   return (
     <Card className="search">
+      <SearchBar
+        placeholder="Search by Game Title..."
+        data={props.items}
+        onSearch={SubmitSearchChange}
+      />
       <SearchFilter
         selected={filteredGroup}
-        onFilterChange={groupFilterChangeHandler}
+        levelSelected={filteredLevel}
+        onGroupFilterChange={groupFilterChangeHandler}
+        onLevelFilterChange={levelFilterChangeHandler}
       />
-      {filteredItems.map((item) => (
-        <SearchItem
-          key={item.id}
-          title={item.title}
-          description={item.description}
-          img={item.src}
-        />
-      ))}
-      {/* <SearchItem
-        title={items[0].title}
-        description={items[0].description}
-        img={items[0].src}
-      />
-      <SearchItem
-        title={items[1].title}
-        description={items[1].description}
-        img={items[1].src}
-      />
-      <SearchItem
-        title={items[2].title}
-        description={items[2].description}
-        img={items[2].src}
-      />
-      <SearchItem
-        title={items[3].title}
-        description={items[3].description}
-        img={items[3].src}
-      /> */}
+      <div className="search-contents">
+        {filteredArray.map((item) => (
+          <SearchItem
+            key={item.id}
+            title={item.GameTitle}
+            description={item.GameDescription}
+            img={item.GameImage}
+          />
+        ))}
+      </div>
     </Card>
   );
 };

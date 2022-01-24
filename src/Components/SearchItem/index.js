@@ -13,11 +13,7 @@ const SearchItem = (props) => {
         <h2>{props.description}</h2>
       </div>
       <div className="search-item__image">
-        <img
-          src={process.env.PUBLIC_URL + props.img}
-          alt="search result"
-          className="search-img"
-        />
+        <img src={props.img} alt="search result" className="search-img" />
       </div>
     </Card>
   );

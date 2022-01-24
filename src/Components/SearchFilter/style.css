@@ -1,7 +1,8 @@
 .search-filter {
-  color: white;
+  color: #9ef19e;
   padding: 0 1rem;
   display: flex;
+  gap: 2rem;
 }
 
 .search-filter__control {
@@ -13,9 +14,14 @@
   margin: 1rem 0;
 }
 
-.search-filter__control label {
+.search-filter__option {
+  color: #3f813f;
+  margin-bottom: 0.5rem;
+}
+
+.search-filter__label {
   font-weight: bold;
-  color: #325c32;
+  color: #193119;
   margin-bottom: 0.5rem;
 }
 
@@ -24,4 +30,8 @@
   padding: 0.5rem 3rem;
   font-weight: bold;
   border-radius: 6px;
+  background-color: #9ef19e;
+}
+.search-filter__option:hover {
+  background-color: #000;
 }
