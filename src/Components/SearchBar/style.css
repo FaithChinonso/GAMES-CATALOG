@@ -6,19 +6,19 @@
 }
 
 .search-field {
-  width: 11rem;
+  width: 90%;
 
   padding: 1rem;
   transition: all 1s ease-in;
-  color: #fff;
+  color: #000;
   border: none;
-  background-color: #2e2d2d;
+  background-color: #46aa46;
   border-radius: 12px;
 }
 .search-field:focus {
-  width: 100%;
+  transform: scaleX(1.25);
   outline: none;
-  background-color: #66a366;
+  background-color: #195219;
   color: #fff;
 }
 .search-field::placeholder {
@@ -38,4 +38,11 @@
   top: 50%;
   transform: translateY(-50%);
   opacity: 1;
+}
+.search-bar.invalid input {
+  background-color: rgb(202, 108, 108);
+  border: 1px solid red;
+}
+.search-bar.invalid .search-icon {
+  color: red;
 }

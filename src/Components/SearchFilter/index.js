@@ -1,12 +1,21 @@
+import React, { useState } from "react";
 import "./style.css";
 
 const SearchFilter = (props) => {
+  const [groupInput, setGroupInput] = useState("");
+  const [levelInput, setLevelInput] = useState("");
   const groupDropDownHandler = (e) => {
-    props.onGroupFilterChange(e.target.value);
+    setLevelInput("");
+    setGroupInput(e.target.value);
+    props.onGroupFilterChange(groupInput);
+    props.onLevelFilterChange(levelInput);
   };
 
   const levelDropDownHandler = (e) => {
-    props.onLevelFilterChange(e.target.value);
+    setGroupInput("");
+    setLevelInput(e.target.value);
+    props.onLevelFilterChange(levelInput);
+    props.onGroupFilterChange(groupInput);
   };
 
   return (

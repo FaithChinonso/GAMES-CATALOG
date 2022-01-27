@@ -1,14 +1,12 @@
 .search {
-  width: 50rem;
   max-width: 95%;
   padding: 1rem;
-  margin: 0 auto;
   gap: 3rem;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  background-color: rgb(240, 238, 238);
+  background-color: #fff;
 }
 .search-contents {
   width: 100%;
@@ -16,4 +14,17 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
+  align-items: center;
+}
+
+@media (max-width: 600px) {
+  .search {
+    gap: 1rem;
+  }
+  .search-contents {
+    flex-direction: column;
+  }
+  .load-button {
+    width: 90%;
+  }
 }
